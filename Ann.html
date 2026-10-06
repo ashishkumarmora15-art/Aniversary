@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Anniversary ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    min-height:100vh;
+    overflow-x:hidden;
+    background:linear-gradient(135deg,#16001f,#4b003f,#8b005d);
+    color:white;
+}
+
+/* Background */
+.bg{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(60px);
+    opacity:.35;
+    animation:move 8s infinite alternate ease-in-out;
+}
+
+.c1{
+    width:250px;
+    height:250px;
+    background:#ff1493;
+    top:5%;
+    left:-80px;
+}
+
+.c2{
+    width:300px;
+    height:300px;
+    background:#ff4b91;
+    right:-100px;
+    bottom:5%;
+    animation-delay:2s;
+}
+
+@keyframes move{
+    from{transform:translate(0,0);}
+    to{transform:translate(50px,-40px);}
+}
+
+/* Main */
+.container{
+    width:100%;
+    max-width:900px;
+    margin:auto;
+    padding:30px 18px 60px;
+    text-align:center;
+}
+
+/* Top */
+.badge{
+    display:inline-block;
+    padding:9px 18px;
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:30px;
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(10px);
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(42px,10vw,85px);
+    line-height:1;
+    font-family:Georgia,serif;
+    text-shadow:0 0 25px rgba(255,100,180,.7);
+}
+
+h1 span{
+    color:#ff82c7;
+}
+
+.subtitle{
+    margin-top:18px;
+    font-size:18px;
+    opacity:.9;
+}
+
+/* Photo */
+.photo-box{
+    width:220px;
+    height:220px;
+    margin:35px auto 20px;
+    border-radius:50%;
+    padding:7px;
+    background:linear-gradient(45deg,#ff62b0,#fff,#ff2d95);
+    box-shadow:0 0 40px rgba(255,80,180,.5);
+    animation:pulse 2.5s infinite;
+}
+
+.photo-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    background:#35002d;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.04);
+        box-shadow:0 0 60px rgba(255,80,180,.75);
+    }
+}
+
+/* Counter */
+.counter{
+    margin:30px auto;
+    max-width:650px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.time{
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(12px);
+    border-radius:18px;
+    padding:18px 5px;
+}
+
+.time b{
+    display:block;
+    font-size:28px;
+    color:#ff9bd5;
+}
+
+.time small{
+    opacity:.8;
+}
+
+/* Card */
+.card{
+    margin:30px auto;
+    max-width:700px;
+    padding:30px 25px;
+    border-radius:25px;
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(15px);
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+}
+
+.card h2{
+    color:#ff9bd5;
+    margin-bottom:18px;
+    font-family:Georgia,serif;
+}
+
+.card p{
+    line-height:1.8;
+    font-size:16px;
+}
+
+/* Buttons */
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+button{
+    border:none;
+    padding:13px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:15px;
+    color:white;
+    background:linear-gradient(135deg,#ff238f,#ff5db1);
+    box-shadow:0 8px 25px rgba(255,35,143,.3);
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+/* Surprise */
+.surprise{
+    display:none;
+    margin-top:25px;
+    animation:appear .7s ease;
+}
+
+.surprise.show{
+    display:block;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.love-message{
+    font-family:Georgia,serif;
+    font-size:22px;
+    line-height:1.7;
+    color:#ffd1ea;
+}
+
+/* Heart */
+.big-heart{
+    font-size:65px;
+    animation:heartBeat 1s infinite;
+    margin:15px;
+}
+
+@keyframes heartBeat{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.18);}
+}
+
+/* Falling hearts */
+.heart{
+    position:fixed;
+    top:-30px;
+    font-size:20px;
+    pointer-events:none;
+    animation:fall linear forwards;
+    z-index:10;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* Footer */
+footer{
+    margin-top:45px;
+    opacity:.7;
+    font-size:13px;
+}
+
+/* Mobile */
+@media(max-width:600px){
+    .container{
+        padding-top:25px;
+    }
+
+    .photo-box{
+        width:180px;
+        height:180px;
+    }
+
+    .counter{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .card{
+        padding:25px 18px;
+    }
+
+    .love-message{
+        font-size:19px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg">
+    <div class="circle c1"></div>
+    <div class="circle c2"></div>
+</div>
+
+<div class="container">
+
+    <div class="badge">💖 A Special Day For Us 💖</div>
+
+    <h1>Happy <span>Anniversary</span></h1>
+
+    <p class="subtitle">
+        एक खूबसूरत सफर... और अभी बहुत सारी यादें बाकी हैं ❤️
+    </p>
+
+    <!-- PHOTO -->
+    <!-- अपनी फोटो का नाम couple.jpg करके इसी folder में रखें -->
+    <div class="photo-box">
+        <img src="rup.png" alt="Our Photo"
+        onerror="this.src='https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=500&q=80'">
+    </div>
+
+    <div class="big-heart">❤️</div>
+
+    <div class="card">
+
+        <h2>Our Beautiful Journey 💕</h2>
+
+        <p>
+            कुछ रिश्ते सिर्फ रिश्ते नहीं होते,
+            वे जिंदगी की सबसे खूबसूरत कहानी बन जाते हैं।
+            हमारी कहानी भी कुछ ऐसी ही है।
+            हर हंसी, हर छोटी-सी नोकझोंक और हर खूबसूरत पल
+            हमेशा मेरे दिल के करीब रहेगा। ❤️
+        </p>
+
+    </div>
+
+    <!-- COUNTER -->
+    <h2 style="margin-top:35px;">हमारा सफर ⏳</h2>
+
+    <div class="counter">
+
+        <div class="time">
+            <b id="days">0</b>
+            <small>Days</small>
+        </div>
+
+        <div class="time">
+            <b id="hours">0</b>
+            <small>Hours</small>
+        </div>
+
+        <div class="time">
+            <b id="minutes">0</b>
+            <small>Minutes</small>
+        </div>
+
+        <div class="time">
+            <b id="seconds">0</b>
+            <small>Seconds</small>
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <button onclick="showSurprise()">
+            🎁 Open Surprise
+        </button>
+
+        <button onclick="createHearts()">
+            💕 More Love
+        </button>
+
+        <button onclick="toggleMusic()" id="musicBtn">
+            🎵 Music
+        </button>
+
+    </div>
+
+    <!-- SURPRISE -->
+    <div class="card surprise" id="surprise">
+
+        <div class="big-heart">💖</div>
+
+        <h2>For You ❤️</h2>
+
+        <p class="love-message">
+            तुम मेरी जिंदगी का वो खूबसूरत हिस्सा हो
+            जिसे मैं कभी खोना नहीं चाहता।<br><br>
+
+            तुम्हारे साथ बिताया हर पल
+            मेरे लिए एक खूबसूरत याद है।<br><br>
+
+            आज हमारी Anniversary पर बस इतना कहना है...
+            <br><br>
+
+            <strong>
+                I Love You ❤️<br>
+                Today, Tomorrow & Forever 💍
+            </strong>
+        </p>
+
+    </div>
+
+    <footer>
+        Made with ❤️ for a very special person
+    </footer>
+
+</div>
+
+<!-- Simple audio -->
+<audio id="music" loop>
+    <source src="rk.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* ==========================================
+   ✏️ यहां अपनी जानकारी बदलें
+   ========================================== */
+
+// Anniversary की तारीख
+// Example: 10 nov 2026
+const anniversaryDate = new Date("2026-11-10T00:00:00");
+
+
+/* ==========================================
+   ⏳ LOVE COUNTER
+   ========================================== */
+
+function updateCounter() {
+
+    const now = new Date();
+
+    // हर साल 10 November
+    let anniversaryDate = new Date(
+        now.getFullYear(),
+        10,
+        10,
+        0,
+        0,
+        0
+    );
+
+    // अगर इस साल की Anniversary निकल चुकी है,
+    // तो अगले साल की Anniversary
+    if (now > anniversaryDate) {
+        anniversaryDate = new Date(
+            now.getFullYear() + 1,
+            10,
+            10,
+            0,
+            0,
+            0
+        );
+    }
+
+    const difference = anniversaryDate - now;
+
+    const totalSeconds = Math.floor(difference / 1000);
+
+    const days = Math.floor(totalSeconds / 86400);
+
+    const hours = Math.floor(
+        (totalSeconds % 86400) / 3600
+    );
+
+    const minutes = Math.floor(
+        (totalSeconds % 3600) / 60
+    );
+
+    const seconds = totalSeconds % 60;
+
+    document.getElementById("days").innerText =
+        String(days).padStart(2, "0");
+
+    document.getElementById("hours").innerText =
+        String(hours).padStart(2, "0");
+
+    document.getElementById("minutes").innerText =
+        String(minutes).padStart(2, "0");
+
+    document.getElementById("seconds").innerText =
+        String(seconds).padStart(2, "0");
+}
+
+setInterval(updateCounter, 1000);
+
+updateCounter();
+
+/* ==========================================
+   🎁 SURPRISE
+   ========================================== */
+
+function showSurprise(){
+
+    const box = document.getElementById("surprise");
+
+    box.classList.toggle("show");
+
+    createHearts();
+
+}
+
+
+/* ==========================================
+   ❤️ FALLING HEARTS
+   ========================================== */
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["❤️","💖","💕","💗","💓","💘","💝"];
+
+    heart.innerHTML =
+        hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left =
+        Math.random()*100 + "vw";
+
+    heart.style.fontSize =
+        (15 + Math.random()*25) + "px";
+
+    heart.style.animationDuration =
+        (3 + Math.random()*4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },7000);
+}
+
+function createHearts(){
+
+    for(let i=0;i<25;i++){
+
+        setTimeout(()=>{
+            createHeart();
+        },i*100);
+
+    }
+
+}
+
+
+/* ==========================================
+   🎵 MUSIC
+   ========================================== */
+
+let musicPlaying = false;
+
+function toggleMusic(){
+
+    const music = document.getElementById("music");
+
+    const btn = document.getElementById("musicBtn");
+
+    if(!musicPlaying){
+
+        music.play()
+        .then(()=>{
+            musicPlaying = true;
+            btn.innerHTML = "⏸️ Pause Music";
+        })
+        .catch(()=>{
+            alert("पहले music.mp3 फाइल इसी folder में रखें ❤️");
+        });
+
+    }else{
+
+        music.pause();
+
+        musicPlaying = false;
+
+        btn.innerHTML = "🎵 Music";
+    }
+
+}
+
+
+/* ==========================================
+   💕 START HEARTS
+   ========================================== */
+
+setInterval(createHeart,1200);
+
+</script>
+
+</body>
+</html>
